@@ -61,7 +61,7 @@ function App() {
           </p>
           <div class="m-5">
             <span class="font-medium">Programming Languages</span>: Python, Java, Rust, C, C++, PHP, Kotlin, JavaScript (NODE)<br></br>
-            <span class="font-medium">Web/App Designing</span> : HTML, CSS, XML<br></br>
+            <span class="font-medium">Web/App Designing</span> : HTML, CSS, XML,React<br></br>
             <span class="font-medium">Tools & Technologies</span> : Android Studio, Expo, Figma, MySQL, Native-React, Angular, Git, LaTeX, MREN <br></br>
             <span class="font-medium">Soft Skills</span>: Problem Solving, Multilingual (English, Hindi, Kannada, Urdu), Communication, Multitasking,Adaptability, Leadership
           </div>
