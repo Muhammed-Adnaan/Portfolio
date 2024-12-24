@@ -6,7 +6,7 @@ import Project from './Project';
 
 export default function Hero() {
   return (
-    <div className="bg-cover bg-center bg-no-repeat h-screen w-screen" style={{ backgroundImage: `url(${backgroundImage})` }}>
+    <div className="bg-cover bg-center bg-no-repeat h-auto w-screen" style={{ backgroundImage: `url(${backgroundImage})` }}>
         <div className="fixed w-full  text-center text-white  text-5xl font-bold">
             <h1 className='absolute top-[300px] w-full'>MUHAMMED ADNAAN</h1>
             <p className='absolute top-[350px] w-full text-xl'>COMPUTER SCIENCE ENGINEER</p>
