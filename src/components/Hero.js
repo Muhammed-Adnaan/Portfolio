@@ -1,25 +1,57 @@
-import backgroundImage from './assets/images/background.jpg'; // Import the image
-// import arrowr from './assets/images/arrowr.png'; // Import the image
-// import arrowl from './assets/images/arrowl.png'; // Import the image
-import Education from './Education';
-import Project from './Project';
+import protfolio from "./assets/images/portfolio.png";
+import aboutME from "./assets/images/aboutme.png";
+import contact from "./assets/images/contact.png";
+import skills from "./assets/images/skillss.png";
+import homeBG from "./assets/images/homePage.png";
+import projects from "./assets/images/resized-projects300.png";
+
+import { Link } from "react-router-dom";
 
 export default function Hero() {
-  return (
-    <div className="bg-cover bg-center bg-no-repeat h-auto w-screen" style={{ backgroundImage: `url(${backgroundImage})` }}>
-        <div className="fixed w-full  text-center text-white  text-5xl font-bold">
-            <h1 className='absolute top-[300px] w-full'>MUHAMMED ADNAAN</h1>
-            <p className='absolute top-[350px] w-full text-xl'>COMPUTER SCIENCE ENGINEER</p>
-            <div className='bg-gray-50/10 h-[450px]'></div>
-        </div>
-            <div className='bg-white translate-y-[440px] '>
-                <Education/>
-            {/* <img src={arrowl} class='size-10 -translate-y-[70px] hover:opacity-10' alt="Arrow left" /> */}
-            {/* <img src={arrowr} class='size-10 absolute right-0 -translate-y-[120px] hover:opacity-10 ' alt="Arrow left" /> */}
-            <div className=''>
-            <Project></Project>
-            </div>
-            </div>
-    </div>
-  );
+	return (
+		<div
+			className="flex justify-center items-center h-screen w-auto"
+			style={{
+				backgroundImage: `url(${homeBG})`,
+				backgroundRepeat: `no-repeat`,
+				backgroundSize: `cover`,
+			}}
+		>
+			<div className="">
+				<div className="m-20 p-5 ">
+					<Link to="/" className="h-50 w-10 ">
+						<img src={protfolio} alt="Portfolio" className=""></img>
+					</Link>
+				</div>
+				<div className="flex justify-center  ">
+					<div className="hover:bg-yellow-400">
+						<a href="/about" className="">
+							<img src={aboutME} alt="AboutMe" className=""></img>
+						</a>
+					</div>
+				</div>
+				<div className="flex justify-center">
+					<div className="hover:bg-yellow-400">
+						<a href="/">
+							<img src={projects} alt="Portfolio"></img>
+						</a>
+					</div>
+				</div>
+				<div className="flex justify-center">
+					<div className="hover:bg-yellow-400">
+						<a href="/">
+							<img src={skills} alt="Portfolio"></img>
+						</a>
+					</div>
+				</div>
+				<div className="flex justify-center ">
+					<div className="hover:bg-yellow-400">
+						<a href="/">
+							<img src={contact} alt="Portfolio"></img>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 }
