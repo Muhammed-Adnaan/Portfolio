@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import instaicon from "./assets/images/socialIcon/instagram.png";
 import linkedinicon from "./assets/images/socialIcon/linkedin.png";
 import github from "./assets/images/socialIcon/github.png";
 import { Link } from "react-router-dom";
 import ArrowRight from "./assets/images/arrow-right.png";
 export default function About() {
-	// Array of phrases to animate
-	const phrases = ["Software Engineer", "Web Developer", "Weeb"];
+	// Array of phrases to animate - memoized to prevent unnecessary re-renders
+	const phrases = useMemo(
+		() => ["Software Engineer", "Web Developer", "Weeb"],
+		[]
+	);
 
 	// State to hold the currently displayed text
 	const [displayedText, setDisplayedText] = useState("");
