@@ -1,6 +1,5 @@
 import protfolio from "./assets/images/portfolio.png";
 import aboutME from "./assets/images/aboutme.png";
-import contact from "./assets/images/contact.png";
 import skills from "./assets/images/skillss.png";
 import homeBG from "./assets/images/homePage.png";
 import projects from "./assets/images/resized-projects300.png";
@@ -32,23 +31,16 @@ export default function Hero() {
 				</div>
 				<div className="flex justify-center">
 					<div className="hover:bg-yellow-400">
-						<a href="/">
-							<img src={projects} alt="Portfolio"></img>
+						<a href="/projects ">
+							<img src={projects} alt="projects "></img>
 						</a>
 					</div>
 				</div>
 				<div className="flex justify-center">
 					<div className="hover:bg-yellow-400">
-						<a href="/">
+						<Link to="/skills">
 							<img src={skills} alt="Portfolio"></img>
-						</a>
-					</div>
-				</div>
-				<div className="flex justify-center ">
-					<div className="hover:bg-yellow-400">
-						<a href="/">
-							<img src={contact} alt="Portfolio"></img>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

@@ -207,6 +207,7 @@ export default function Resume() {
 					</p>
 				</div>
 			</div>
+			
 		</div>
 	);
 }

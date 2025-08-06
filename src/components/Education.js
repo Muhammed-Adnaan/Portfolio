@@ -8,7 +8,7 @@ export default function Education() {
 						<div class="col-span-2">
 							<p>
 								<span class="font-bold">
-									B.E in Computer Science and Engineering{" "}
+									B.E in Computer Science and Engineering
 								</span>
 								| CGPA: 7 <br></br>
 								Government Engineering College Mosale Hosahalli, Hassan
@@ -21,7 +21,7 @@ export default function Education() {
 					<div>
 						<div class="col-span-2">
 							<p>
-								<span class="font-bold">XII (PCMB)</span>| Percentage: 96%{" "}
+								<span class="font-bold">XII (PCMB)</span>| Percentage: 96%
 								<br></br>
 								Brigade PU College, Hassan
 							</p>
@@ -33,7 +33,7 @@ export default function Education() {
 					<div>
 						<div class="col-span-2">
 							<p>
-								<span class="font-bold">X (SSLC)</span>| Percentage: 88%{" "}
+								<span class="font-bold">X (SSLC)</span>| Percentage: 88%
 								<br></br>
 								Brilliant Public School, Hassan
 							</p>

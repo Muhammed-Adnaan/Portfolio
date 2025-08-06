@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
-
+import instaicon from "./assets/images/socialIcon/instagram.png";
+import linkedinicon from "./assets/images/socialIcon/linkedin.png";
+import github from "./assets/images/socialIcon/github.png";
+import { Link } from "react-router-dom";
+import ArrowRight from "./assets/images/arrow-right.png";
 export default function About() {
 	// Array of phrases to animate
-	const phrases = ["Software Developer ", "Web Developer", "Anime Lover"];
+	const phrases = ["Software Engineer", "Web Developer", "Weeb"];
 
 	// State to hold the currently displayed text
 	const [displayedText, setDisplayedText] = useState("");
@@ -57,7 +61,7 @@ export default function About() {
 	}, [charIndex, isTyping, phraseIndex]); // Re-run effect when these states change
 
 	return (
-		<div className="bg-[#00234b] min-h-screen w-screen flex flex-col justify-center items-start p-8 md:p-[100px] font-inter">
+		<div className="pixelify-sans bg-[#00234b] min-h-screen w-full flex flex-col justify-center items-start p-8 md:p-[100px] font-inter">
 			<div className="flex flex-col gap-4">
 				{" "}
 				{/* Added a flex container for text */}
@@ -70,6 +74,39 @@ export default function About() {
 					{/* Blinking cursor for typing effect */}
 					<span className="animate-blink">|</span>
 				</div>
+			</div>
+			<div className="mt-[50px] text-2xl text-white">
+				<span className="text-yellow-400">From :</span>
+				📍Bengaluru, India
+			</div>
+			<div className="flex gap-4 mt-5">
+				<div>
+					<Link to="https://www.instagram.com/zen.adddy_/#">
+						<img src={instaicon} alt="Portfolio"></img>
+					</Link>
+				</div>
+				<div>
+					<Link to="https://linkedin.com/in/muhammed-adnaan-ur-rahmaan/">
+						<img src={linkedinicon} alt="Portfolio" className=""></img>
+					</Link>
+				</div>
+				<div>
+					<Link to="https://github.com/Muhammed-Adnaan/">
+						<img src={github} alt="Portfolio"></img>
+					</Link>
+				</div>
+				<Link
+					className="scale-50 absolute bottom-[5%] right-[45%]  opacity-10 hover:opacity-75 transition-opacity duration-500"
+					to="/projects"
+				>
+					<img src={ArrowRight} alt="right"></img>
+				</Link>
+				<Link
+					className="scale-50 rotate-180 absolute bottom-[5%] right-[50%] opacity-10 hover:opacity-75 transition-opacity duration-500"
+					to="/"
+				>
+					<img src={ArrowRight} alt="right"></img>
+				</Link>
 			</div>
 		</div>
 	);
