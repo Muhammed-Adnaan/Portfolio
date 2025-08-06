@@ -58,7 +58,7 @@ export default function About() {
 			clearTimeout(timeoutId); // Clear the timeout
 			cancelAnimationFrame(animationFrameId); // Cancel any pending animation frame
 		};
-	}, [charIndex, isTyping, phraseIndex]); // Re-run effect when these states change
+	}, [charIndex, isTyping, phraseIndex, phrases]); // Re-run effect when these states change
 
 	return (
 		<div className="pixelify-sans bg-[#00234b] min-h-screen w-full flex flex-col justify-center items-start p-8 md:p-[100px] font-inter">
