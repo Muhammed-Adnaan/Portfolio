@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ArrowRight from "./assets/images/arrow-right.png";
 import aduitcode from "./assets/images/project-pics/aduitcode/aduitProfile.png";
 import Quill from "./assets/images/project-pics/chatApp/quillProfile.png";
 import medicare from "./assets/images/project-pics/medihub/Medicare-profile.png";
@@ -72,34 +73,45 @@ export default function Proj() {
 							</div>
 
 							{/* Project Content */}
-							<div className="p-6 flex-grow flex flex-col">
-								<h3 className="text-[#0F0] text-2xl font-bold mb-3 hover:text-4xl duration-500">
-									{" "}
-									{/* Green text for title */}
-									{project.title}
-								</h3>
-								<p className="text-gray-300 text-lg leading-relaxed mb-4 flex-grow">
-									{project.description}
-								</p>
-								{/* "Read more..." link */}
-								<Link
-									to={
-										index === 0
-											? "/projects/aduitcode"
-											: index === 1
-											? "/projects/medicare"
-											: index === 2
-											? "/projects/quill"
-											: "/projects/travelblog"
-									}
-									className="text-blue-400 hover:underline self-end"
-								>
-									Read more...
-								</Link>
-							</div>
+							<Link
+								to={
+									index === 0
+										? "/projects/aduitcode"
+										: index === 1
+										? "/projects/medicare"
+										: index === 2
+										? "/projects/quill"
+										: "/projects/travelblog"
+								}
+							>
+								<div className="p-6 flex-grow flex flex-col">
+									<h3 className="text-[#0F0] text-2xl font-bold mb-3 hover:text-4xl duration-500">
+										{" "}
+										{/* Green text for title */}
+										{project.title}
+									</h3>
+									<p className="text-gray-300 text-lg leading-relaxed mb-4 flex-grow">
+										{project.description}
+									</p>
+								</div>
+							</Link>
 						</div>
 					</div>
 				))}
+				<div>
+					<Link
+						className="scale-50 absolute right-[45%]  opacity-10 hover:opacity-75 transition-opacity duration-500"
+						to="/skills"
+					>
+						<img src={ArrowRight} alt="right"></img>
+					</Link>
+					<Link
+						className="scale-50 rotate-180 absolute right-[50%] opacity-10 hover:opacity-75 transition-opacity duration-500"
+						to="/about"
+					>
+						<img src={ArrowRight} alt="left"></img>
+					</Link>
+				</div>
 			</div>
 		</div>
 	);

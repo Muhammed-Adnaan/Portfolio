@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ArrowRight from "./assets/images/arrow-right.png";
 import ArrowLeft from "./assets/images/arrow-right.png";
 
 export default function Skills() {
@@ -197,6 +198,20 @@ export default function Skills() {
 						</span>
 					))}
 				</div>
+			</div>
+			<div>
+				<Link
+					className="scale-50 absolute right-[45%]  opacity-10 hover:opacity-75 transition-opacity duration-500"
+					to="/resume"
+				>
+					<img src={ArrowRight} alt="right"></img>
+				</Link>
+				<Link
+					className="scale-50 rotate-180 absolute right-[50%] opacity-10 hover:opacity-75 transition-opacity duration-500"
+					to="/projects"
+				>
+					<img src={ArrowRight} alt="left"></img>
+				</Link>
 			</div>
 		</div>
 	);
