@@ -1,21 +1,13 @@
 {
-  "name": "resume",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "cra-template": "1.2.0",
-    "lucide-react": "^0.469.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-pdf": "^10.2.0",
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
-    "tailwind-merge": "^2.5.5",
-    "tailwindcss-animate": "^1.0.7",
-    "web-vitals": "^4.2.4",
-    "webfontloader": "^1.6.28"
+    "web-vitals": "^4.2.4"
   },
   "scripts": {
     "start": "react-scripts start",

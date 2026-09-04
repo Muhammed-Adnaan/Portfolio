@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import ArrowLeft from "../assets/images/arrow-right.png";
 
 // Import all Travel Blog project images
-import travelProfile from "../assets/images/project-pics/travelBlog/TravelProfile.png";
-import screenshot1 from "../assets/images/project-pics/travelBlog/Screenshot 2025-06-15 202317.png";
-import screenshot2 from "../assets/images/project-pics/travelBlog/Screenshot 2025-06-15 202329.png";
-import screenshot3 from "../assets/images/project-pics/travelBlog/Screenshot 2025-06-15 202342.png";
-import screenshot4 from "../assets/images/project-pics/travelBlog/Screenshot 2025-06-15 202359.png";
-import screenshot5 from "../assets/images/project-pics/travelBlog/Screenshot 2025-06-15 202416.png";
+import travelProfile from "../assets/images/project-pics/travelBlog/TravelProfile.webp";
+import screenshot1 from "../assets/images/project-pics/travelBlog/Screenshot 2025-06-15 202317.webp";
+import screenshot2 from "../assets/images/project-pics/travelBlog/Screenshot 2025-06-15 202329.webp";
+import screenshot3 from "../assets/images/project-pics/travelBlog/Screenshot 2025-06-15 202342.webp";
+import screenshot4 from "../assets/images/project-pics/travelBlog/Screenshot 2025-06-15 202359.webp";
+import screenshot5 from "../assets/images/project-pics/travelBlog/Screenshot 2025-06-15 202416.webp";
 
 export default function TravelBlogProject() {
 	const projectInfo = {
@@ -122,6 +122,8 @@ export default function TravelBlogProject() {
 							<img
 								src={image.src}
 								alt={image.alt}
+								loading="lazy"
+								decoding="async"
 								className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
 							/>
 							<div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-end">
@@ -138,12 +140,16 @@ export default function TravelBlogProject() {
 			<div className="flex flex-wrap gap-4">
 				<a
 					href="https://muhammed-adnaan.github.io/Travel-blog/"
+					target="_blank"
+					rel="noopener noreferrer"
 					className="px-6 py-3 bg-yellow-400 text-[#00234b] rounded-lg font-bold hover:bg-yellow-300 transition-colors duration-300"
 				>
 					View Live Demo
 				</a>
 				<a
 					href="https://github.com/Muhammed-Adnaan/Travel-blog"
+					target="_blank"
+					rel="noopener noreferrer"
 					className="px-6 py-3 border-2 border-yellow-400 text-yellow-400 rounded-lg font-bold hover:bg-yellow-400 hover:text-[#00234b] transition-colors duration-300"
 				>
 					View Source Code

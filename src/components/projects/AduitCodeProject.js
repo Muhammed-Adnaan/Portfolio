@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import ArrowLeft from "../assets/images/arrow-right.png";
 
 // Import all AduitCode project images
-import aduitProfile from "../assets/images/project-pics/aduitcode/aduitProfile.png";
-import aduitThumb from "../assets/images/project-pics/aduitcode/aduitcodeThumb.png";
-import screenshot1 from "../assets/images/project-pics/aduitcode/Screenshot 2024-07-29 161149.png";
-import screenshot2 from "../assets/images/project-pics/aduitcode/Screenshot 2024-07-29 161538.png";
-import screenshot3 from "../assets/images/project-pics/aduitcode/Screenshot 2024-07-29 161613.png";
-import screenshot4 from "../assets/images/project-pics/aduitcode/Screenshot 2024-07-29 161850.png";
-import screenshot5 from "../assets/images/project-pics/aduitcode/Screenshot 2024-07-29 161938.png";
-import screenshot6 from "../assets/images/project-pics/aduitcode/Screenshot 2025-08-06 124040.png";
+import aduitProfile from "../assets/images/project-pics/aduitcode/aduitProfile.webp";
+import aduitThumb from "../assets/images/project-pics/aduitcode/aduitcodeThumb.webp";
+import screenshot1 from "../assets/images/project-pics/aduitcode/Screenshot 2024-07-29 161149.webp";
+import screenshot2 from "../assets/images/project-pics/aduitcode/Screenshot 2024-07-29 161538.webp";
+import screenshot3 from "../assets/images/project-pics/aduitcode/Screenshot 2024-07-29 161613.webp";
+import screenshot4 from "../assets/images/project-pics/aduitcode/Screenshot 2024-07-29 161850.webp";
+import screenshot5 from "../assets/images/project-pics/aduitcode/Screenshot 2024-07-29 161938.webp";
+import screenshot6 from "../assets/images/project-pics/aduitcode/Screenshot 2025-08-06 124040.webp";
 
 export default function AduitCodeProject() {
 	const projectInfo = {
@@ -118,6 +118,8 @@ export default function AduitCodeProject() {
 							<img
 								src={image.src}
 								alt={image.alt}
+								loading="lazy"
+								decoding="async"
 								className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
 							/>
 							<div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-end">
@@ -134,6 +136,8 @@ export default function AduitCodeProject() {
 			<div className="flex flex-wrap gap-4">
 				<a
 					href="https://github.com/Muhammed-Adnaan/AduitCode"
+					target="_blank"
+					rel="noopener noreferrer"
 					className="px-6 py-3 bg-yellow-400 text-[#00234b] rounded-lg font-bold hover:bg-yellow-300 transition-colors duration-300"
 				>
 					View Source Code

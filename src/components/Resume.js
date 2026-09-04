@@ -1,34 +1,47 @@
-import AdnaanResumePDF from "../components/assets/Resume/AdnaanResume.pdf";
+import AdnaanResumePDF from "./assets/Resume/AdnaanResume.pdf";
 import homeBG from "./assets/images/homePage.png";
-export default function Resume() {
-	// Use the URL for a remote file or the path for a local file in the public folder
-	const pdfFile = AdnaanResumePDF; // Example: '/sample.pdf'
-	const divStyle = {
-		backgroundImage: `url(${homeBG})`,
-		height: "100vh", // Make sure to quote '100vh' (View Height)
-	};
 
+export default function Resume() {
 	return (
-		<div style={divStyle} className="flex justify-center items-center">
-			<div style={{ padding: "20px" }}>
-				{/* The key is the iframe tag:
-        - src: Points to the public URL of the PDF.
-        - type: Specifies the content is a PDF.
-        - width/height: Set the dimensions of the frame.
-		*/}
-				<iframe
-					src={pdfFile}
-					type="application/pdf"
-					width="1000px"
-					height="600px"
-					title="Resume"
-					className="pt-5"
+		<div
+			className="pixelify-sans min-h-screen w-full flex flex-col items-center pt-24 pb-12 px-4"
+			style={{
+				backgroundImage: `url(${homeBG})`,
+				backgroundRepeat: "no-repeat",
+				backgroundSize: "cover",
+				backgroundAttachment: "fixed",
+			}}
+		>
+			{/* Mobile browsers largely refuse to render PDFs in an iframe, so the
+			    download link is the primary path and the preview is a bonus. */}
+			<div className="flex flex-wrap gap-4 justify-center mb-6">
+				<a
+					href={AdnaanResumePDF}
+					download="Muhammed-Adnaan-Resume.pdf"
+					className="px-6 py-3 bg-yellow-400 text-[#00234b] rounded-lg font-bold text-lg hover:bg-yellow-300 transition-colors duration-300"
 				>
-					{/* Fallback text for browsers that don't support iframes or PDF viewing */}
+					Download Resume
+				</a>
+				<a
+					href={AdnaanResumePDF}
+					target="_blank"
+					rel="noopener noreferrer"
+					className="px-6 py-3 border-2 border-yellow-400 text-yellow-400 rounded-lg font-bold text-lg hover:bg-yellow-400 hover:text-[#00234b] transition-colors duration-300"
+				>
+					Open in new tab
+				</a>
+			</div>
+
+			<div className="hidden md:block w-full max-w-5xl">
+				<iframe
+					src={AdnaanResumePDF}
+					title="Resume"
+					className="w-full h-[80vh] rounded-lg border-2 border-yellow-400 bg-white"
+				>
 					<p>
-						Your browser does not support iframes. You can{" "}
-						<a href={pdfFile} download>
-							download the PDF
+						Your browser can't display PDFs.{" "}
+						<a href={AdnaanResumePDF} download>
+							Download the PDF
 						</a>{" "}
 						instead.
 					</p>

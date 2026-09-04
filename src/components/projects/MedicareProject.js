@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 import ArrowLeft from "../assets/images/arrow-right.png";
 
 // Import all Medicare project images
-import medicareProfile from "../assets/images/project-pics/medihub/Medicare-profile.png";
-import screenshot1 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 182742.png";
-import screenshot2 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 182819.png";
-import screenshot3 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 182853.png";
-import screenshot4 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 185253.png";
-import screenshot5 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 185304.png";
-import screenshot6 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 185313.png";
-import screenshot7 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 185323.png";
-import screenshot8 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 185343.png";
-import screenshot9 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 185356.png";
-import screenshot10 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 185535.png";
-import screenshot11 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 190840.png";
-import screenshot12 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 190854.png";
-import screenshot13 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 190901.png";
+import medicareProfile from "../assets/images/project-pics/medihub/Medicare-profile.webp";
+import screenshot1 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 182742.webp";
+import screenshot2 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 182819.webp";
+import screenshot3 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 182853.webp";
+import screenshot4 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 185253.webp";
+import screenshot5 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 185304.webp";
+import screenshot6 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 185313.webp";
+import screenshot7 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 185323.webp";
+import screenshot8 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 185343.webp";
+import screenshot9 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 185356.webp";
+import screenshot10 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 185535.webp";
+import screenshot11 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 190840.webp";
+import screenshot12 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 190854.webp";
+import screenshot13 from "../assets/images/project-pics/medihub/Screenshot 2025-05-14 190901.webp";
 
 export default function MedicareProject() {
 	const projectInfo = {
@@ -144,6 +144,8 @@ export default function MedicareProject() {
 							<img
 								src={image.src}
 								alt={image.alt}
+								loading="lazy"
+								decoding="async"
 								className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
 							/>
 							<div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-end">
@@ -160,6 +162,8 @@ export default function MedicareProject() {
 			<div className="flex flex-wrap gap-4">
 				<a
 					href="https://github.com/Muhammed-Adnaan/Medicare"
+					target="_blank"
+					rel="noopener noreferrer"
 					className="px-6 py-3 bg-yellow-400 text-[#00234b] rounded-lg font-bold hover:bg-yellow-300 transition-colors duration-300"
 				>
 					View Source Code

@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import ArrowLeft from "../assets/images/arrow-right.png";
 
 // Import all Quill Chat App project images
-import quillProfile from "../assets/images/project-pics/chatApp/quillProfile.png";
-import screenshot1 from "../assets/images/project-pics/chatApp/Screenshot 2024-03-17 213717.png";
-import screenshot2 from "../assets/images/project-pics/chatApp/Screenshot 2024-03-17 213815.png";
-import screenshot3 from "../assets/images/project-pics/chatApp/Screenshot 2024-03-18 074244.png";
-import screenshot4 from "../assets/images/project-pics/chatApp/Screenshot 2024-03-18 074344.png";
-import screenshot5 from "../assets/images/project-pics/chatApp/Screenshot 2024-03-18 074401.png";
-import screenshot6 from "../assets/images/project-pics/chatApp/Screenshot 2024-03-18 074420.png";
+import quillProfile from "../assets/images/project-pics/chatApp/quillProfile.webp";
+import screenshot1 from "../assets/images/project-pics/chatApp/Screenshot 2024-03-17 213717.webp";
+import screenshot2 from "../assets/images/project-pics/chatApp/Screenshot 2024-03-17 213815.webp";
+import screenshot3 from "../assets/images/project-pics/chatApp/Screenshot 2024-03-18 074244.webp";
+import screenshot4 from "../assets/images/project-pics/chatApp/Screenshot 2024-03-18 074344.webp";
+import screenshot5 from "../assets/images/project-pics/chatApp/Screenshot 2024-03-18 074401.webp";
+import screenshot6 from "../assets/images/project-pics/chatApp/Screenshot 2024-03-18 074420.webp";
 
 export default function QuillProject() {
 	const projectInfo = {
@@ -121,6 +121,8 @@ export default function QuillProject() {
 							<img
 								src={image.src}
 								alt={image.alt}
+								loading="lazy"
+								decoding="async"
 								className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
 							/>
 							<div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-end">
@@ -137,6 +139,8 @@ export default function QuillProject() {
 			<div className="flex flex-wrap gap-4">
 				<a
 					href="https://github.com/Muhammed-Adnaan/Chat-App"
+					target="_blank"
+					rel="noopener noreferrer"
 					className="px-6 py-3 bg-yellow-400 text-[#00234b] rounded-lg font-bold hover:bg-yellow-300 transition-colors duration-300"
 				>
 					View Source Code

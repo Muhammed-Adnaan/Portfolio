@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ArrowRight from "./assets/images/arrow-right.png";
 import ArrowLeft from "./assets/images/arrow-right.png";
+import PageNav from "./PageNav";
+
+const PROJECT_COUNT = 4;
 
 export default function Skills() {
 	const skillsData = {
@@ -47,13 +49,18 @@ export default function Skills() {
 		],
 		softSkills: [
 			{ name: "Problem Solving", icon: "🧩" },
-			{ name: "Communica-tion", icon: "💬" },
+			{ name: "Communication", icon: "💬" },
 			{ name: "Multitasking", icon: "⚡" },
 			{ name: "Adaptability", icon: "🔄" },
 			{ name: "Leadership", icon: "👑" },
 			{ name: "Multilingual", icon: "🌍" },
 		],
 	};
+
+	// Everything except soft skills counts as a technology or tool.
+	const totalTechnologies = Object.entries(skillsData)
+		.filter(([category]) => category !== "softSkills")
+		.reduce((sum, [, skills]) => sum + skills.length, 0);
 
 	const SkillCard = ({ skill }) => (
 		<div className="bg-gray-800 rounded-lg p-4 border border-gray-600 hover:border-yellow-500 transition-all duration-300 hover:scale-105">
@@ -174,12 +181,14 @@ export default function Skills() {
 					</div>
 					<div className="text-center">
 						<div className="text-4xl font-bold text-yellow-400 mb-2">
-							{skillsData.backendTechnologies.length}+
+							{totalTechnologies}
 						</div>
 						<div className="text-gray-300">Technologies & Tools</div>
 					</div>
 					<div className="text-center">
-						<div className="text-4xl font-bold text-yellow-400 mb-2">4</div>
+						<div className="text-4xl font-bold text-yellow-400 mb-2">
+							{PROJECT_COUNT}
+						</div>
 						<div className="text-gray-300">Major Projects Completed</div>
 					</div>
 				</div>
@@ -199,20 +208,10 @@ export default function Skills() {
 					))}
 				</div>
 			</div>
-			<div>
-				<Link
-					className="scale-50 absolute right-[45%]  opacity-10 hover:opacity-75 transition-opacity duration-500"
-					to="/resume"
-				>
-					<img src={ArrowRight} alt="right"></img>
-				</Link>
-				<Link
-					className="scale-50 rotate-180 absolute right-[50%] opacity-10 hover:opacity-75 transition-opacity duration-500"
-					to="/projects"
-				>
-					<img src={ArrowRight} alt="left"></img>
-				</Link>
-			</div>
+			<PageNav
+				prev={{ to: "/projects", label: "Projects" }}
+				next={{ to: "/resume", label: "Resume" }}
+			/>
 		</div>
 	);
 }

@@ -9,37 +9,40 @@ import { Link } from "react-router-dom";
 export default function Hero() {
 	return (
 		<div
-			className="flex justify-center items-center h-screen w-auto"
+			className="flex justify-center items-center min-h-screen w-full px-4"
 			style={{
 				backgroundImage: `url(${homeBG})`,
 				backgroundRepeat: `no-repeat`,
 				backgroundSize: `cover`,
 			}}
 		>
-			<div className="">
-				<div className="m-20 p-5 ">
-					<Link to="/" className="h-50 w-10 ">
-						<img src={protfolio} alt="Portfolio" className=""></img>
-					</Link>
+			{/* The menu is pixel-art text, so the real headings live here for
+			    screen readers and search engines. */}
+			<h1 className="sr-only">
+				Muhammed Adnaan Ur Rahmaan — Software Engineer &amp; Web Developer
+			</h1>
+			<div className="flex flex-col items-center">
+				<div className="m-10 md:m-20 p-5">
+					<img src={protfolio} alt="Portfolio" className="max-w-full" />
 				</div>
-				<div className="flex justify-center  ">
+				<div className="flex justify-center">
 					<div className="hover:bg-yellow-400">
-						<a href="/about" className="">
-							<img src={aboutME} alt="AboutMe" className=""></img>
-						</a>
+						<Link to="/about">
+							<img src={aboutME} alt="About me" className="max-w-full" />
+						</Link>
 					</div>
 				</div>
 				<div className="flex justify-center">
 					<div className="hover:bg-yellow-400">
-						<a href="/projects ">
-							<img src={projects} alt="projects "></img>
-						</a>
+						<Link to="/projects">
+							<img src={projects} alt="Projects" className="max-w-full" />
+						</Link>
 					</div>
 				</div>
 				<div className="flex justify-center">
 					<div className="hover:bg-yellow-400">
 						<Link to="/skills">
-							<img src={skills} alt="Portfolio"></img>
+							<img src={skills} alt="Skills" className="max-w-full" />
 						</Link>
 					</div>
 				</div>
