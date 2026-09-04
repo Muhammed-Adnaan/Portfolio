@@ -40,6 +40,7 @@ export default function Hero() {
 			ref={scope}
 			className="flex justify-center items-center min-h-screen min-h-[100svh] w-full px-4"
 			style={{
+				backgroundColor: "#00234b",
 				backgroundImage: `url(${homeBG})`,
 				backgroundRepeat: `no-repeat`,
 				backgroundSize: `cover`,

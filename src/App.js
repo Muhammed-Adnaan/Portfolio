@@ -24,8 +24,10 @@ const TravelBlogProject = lazy(() => import("./components/projects/TravelBlogPro
 
 function PageFallback() {
 	return (
-		<div className="pixelify-sans bg-[#00234b] min-h-screen w-full flex items-center justify-center text-yellow-400 text-2xl">
-			Loading…
+		<div className="pixelify-sans bg-[#00234b] min-h-screen min-h-[100svh] w-full flex items-center justify-center">
+			<span className="text-yellow-400 text-2xl animate-fade-in-late">
+				Loading…
+			</span>
 		</div>
 	);
 }
@@ -48,9 +50,13 @@ function NotFound() {
 }
 
 /**
- * Screen-change wipe. Each route steps in rather than fading smoothly, the way
- * a menu swaps screens on a console. Scroll resets too, so a new page never
- * opens halfway down.
+ * Screen-change step and scroll reset, so a new page never opens halfway down.
+ *
+ * This deliberately animates transform only. Fading the wrapper meant the
+ * whole page dropped to zero opacity on every navigation, which read as a
+ * full-screen flash — nothing was painted behind it but the document ground.
+ * Each page already steps its own content in, so the entrance is covered;
+ * here the page only needs to arrive, never to disappear first.
  */
 function RouteTransition({ children }) {
 	const scope = useRef(null);
@@ -64,8 +70,14 @@ function RouteTransition({ children }) {
 		const ctx = gsap.context(() => {
 			gsap.fromTo(
 				scope.current,
-				{ opacity: 0, y: 8 },
-				{ opacity: 1, y: 0, duration: 0.3, ease: STEPS.quick, snap: { y: 1 } }
+				{ y: 8 },
+				{
+					y: 0,
+					duration: 0.26,
+					ease: STEPS.quick,
+					snap: { y: 1 },
+					clearProps: "transform",
+				}
 			);
 		}, scope);
 		return () => ctx.revert();

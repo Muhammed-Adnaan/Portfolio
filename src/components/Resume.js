@@ -13,6 +13,7 @@ export default function Resume() {
 			ref={scope}
 			className="pixelify-sans min-h-screen min-h-[100svh] w-full flex flex-col items-center pt-24 pb-12 px-4"
 			style={{
+				backgroundColor: "#00234b",
 				backgroundImage: `url(${homeBG})`,
 				backgroundRepeat: "no-repeat",
 				backgroundSize: "cover",

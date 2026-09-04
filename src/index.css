@@ -14,6 +14,20 @@
   font-style: normal;
 }
 
+/* The app paints its own dark ground on each page, but html/body were
+   transparent, so the browser's white canvas showed through wherever page
+   content was mid-transition, briefly unmounted, or rubber-banded past on
+   mobile. Painting the shell the same navy removes every one of those. */
+html,
+body,
+#root {
+  background-color: #00234b;
+}
+
+html {
+  color-scheme: dark;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
