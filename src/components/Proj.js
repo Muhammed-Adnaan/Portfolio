@@ -5,6 +5,8 @@ import Quill from "./assets/images/project-pics/chatApp/quillProfile.webp";
 import medicare from "./assets/images/project-pics/medihub/Medicare-profile.webp";
 import travel from "./assets/images/project-pics/travelBlog/TravelProfile.webp";
 import PageShell from "./PageShell";
+import { useRetro, enterList } from "../lib/retro";
+import { revealOnScroll } from "../lib/retroScroll";
 
 export default function Proj() {
 	// Define project data as an array of objects
@@ -39,10 +41,18 @@ export default function Proj() {
 		},
 	];
 
+	const scope = useRetro(() => {
+		enterList("[data-retro='page-title']", { y: 12 });
+		revealOnScroll("[data-retro='project-card']", { stagger: 0.09 });
+	});
+
 	return (
-		<PageShell className="flex flex-col justify-start items-center">
+		<PageShell className="flex flex-col justify-start items-center" ref={scope}>
 			{/* Page Title */}
-			<div className="text-white text-4xl md:text-6xl mb-12 self-start">
+			<div
+				className="text-white text-4xl md:text-6xl mb-12 self-start"
+				data-retro="page-title"
+			>
 				Projects
 			</div>
 
@@ -51,6 +61,7 @@ export default function Proj() {
 				{projects.map((project) => (
 					<div
 						key={project.to}
+						data-retro="project-card"
 						className=" bg-black rounded-lg p-1" // Outer div for the green border effect
 						style={{
 							background: "linear-gradient(to bottom right, #eab308, #F3D26F)", // Green gradient for border

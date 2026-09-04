@@ -11,6 +11,8 @@ import screenshot4 from "../assets/images/project-pics/chatApp/Screenshot 2024-0
 import screenshot5 from "../assets/images/project-pics/chatApp/Screenshot 2024-03-18 074401.webp";
 import screenshot6 from "../assets/images/project-pics/chatApp/Screenshot 2024-03-18 074420.webp";
 import PageShell from "../PageShell";
+import { useRetro, enterHeader, enterList } from "../../lib/retro";
+import { revealOnScroll } from "../../lib/retroScroll";
 
 export default function QuillProject() {
 	const projectInfo = {
@@ -44,8 +46,16 @@ export default function QuillProject() {
 		],
 	};
 
+	const scope = useRetro(() => {
+		enterHeader("[data-retro='header'] > *");
+		// Tech pills read like a power-up row filling in.
+		enterList("[data-retro='tech']", { stagger: 0.04, y: 0, delay: 0.2 });
+		revealOnScroll("[data-retro='feature']", { stagger: 0.05 });
+		revealOnScroll("[data-retro='shot']", { stagger: 0.07 });
+	});
+
 	return (
-		<PageShell>
+		<PageShell ref={scope}>
 			{/* Header with back button */}
 			<div className="flex items-center gap-4 mb-12">
 				<Link
@@ -58,7 +68,7 @@ export default function QuillProject() {
 			</div>
 
 			{/* Project Title and Description */}
-			<div className="mb-12">
+			<div className="mb-12" data-retro="header">
 				<h1 className="text-white text-4xl md:text-6xl mb-6 font-bold">
 					{projectInfo.title}
 				</h1>
@@ -76,6 +86,7 @@ export default function QuillProject() {
 					{projectInfo.techStack.map((tech, index) => (
 						<span
 							key={index}
+							data-retro="tech"
 							className="px-4 py-2 bg-blue-900 text-blue-200 rounded-full text-sm font-medium border border-blue-700 hover:bg-blue-800 transition-colors duration-300"
 						>
 							{tech}
@@ -93,6 +104,7 @@ export default function QuillProject() {
 					{projectInfo.features.map((feature, index) => (
 						<div
 							key={index}
+							data-retro="feature"
 							className="flex items-start gap-3 p-4 bg-gray-900 rounded-lg border border-gray-700 hover:border-yellow-500 transition-colors duration-300"
 						>
 							<span className="text-yellow-400 text-lg">•</span>
@@ -111,7 +123,8 @@ export default function QuillProject() {
 					{projectInfo.images.map((image, index) => (
 						<div
 							key={index}
-							className={`relative group overflow-hidden rounded-lg border-2 border-gray-700 hover:border-yellow-500 transition-all duration-300 aspect-video md:aspect-auto ${
+							data-retro="shot"
+							className={`relative group overflow-hidden rounded-lg border-2 border-gray-700 hover:border-yellow-500 transition-colors duration-300 aspect-video md:aspect-auto ${
 								image.size === "large"
 									? "md:col-span-10 md:row-span-2"
 									: image.size === "medium"

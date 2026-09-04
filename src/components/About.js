@@ -5,6 +5,7 @@ import linkedinicon from "./assets/images/socialIcon/linkedin.png";
 import github from "./assets/images/socialIcon/github.png";
 import PageNav from "./PageNav";
 import PageShell from "./PageShell";
+import { useRetro, enterList, STEPS, PIXEL, gsap } from "../lib/retro";
 
 const SOCIALS = [
 	{
@@ -69,9 +70,26 @@ export default function About() {
 		return () => clearTimeout(timeoutId);
 	}, [charIndex, isTyping, phraseIndex, phrases]);
 
+	const scope = useRetro(() => {
+		const tl = gsap.timeline();
+		tl.from("[data-retro='name']", {
+			opacity: 0,
+			y: 14,
+			duration: 0.45,
+			ease: STEPS.enter,
+			snap: PIXEL,
+		}).from(
+			"[data-retro='meta']",
+			{ opacity: 0, y: 10, duration: 0.4, ease: STEPS.enter, snap: PIXEL },
+			"-=0.15"
+		);
+		// Social icons pop in like collected items.
+		enterList("[data-retro='social']", { stagger: 0.08, y: 0, delay: 0.35 });
+	});
+
 	return (
-		<PageShell className="flex flex-col justify-center items-start">
-			<div className="flex flex-col gap-4">
+		<PageShell className="flex flex-col justify-center items-start" ref={scope}>
+			<div className="flex flex-col gap-4" data-retro="name">
 				<h1 className="pixelify-sans text-white text-4xl md:text-6xl leading-tight">
 					<span className="text-yellow-400">Hey,</span> I am Muhammed Adnaan Ur
 					Rahmaan
@@ -83,7 +101,7 @@ export default function About() {
 					</span>
 				</div>
 			</div>
-			<div className="mt-[50px] text-2xl text-white">
+			<div className="mt-[50px] text-2xl text-white" data-retro="meta">
 				<span className="text-yellow-400">From :</span>
 				📍Bengaluru, India
 			</div>
@@ -95,7 +113,8 @@ export default function About() {
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label={social.label}
-						className="flex items-center justify-center h-11 w-11 hover:opacity-75 transition-opacity duration-300"
+						data-retro="social"
+						className="flex items-center justify-center h-11 w-11 hover:brightness-125 transition-[filter] duration-200"
 					>
 						<img src={social.icon} alt="" />
 					</a>

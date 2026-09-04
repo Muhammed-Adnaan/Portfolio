@@ -1,5 +1,12 @@
-import { Suspense, lazy } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Suspense, lazy, useLayoutEffect, useRef } from "react";
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	Link,
+	useLocation,
+} from "react-router-dom";
+import { gsap, STEPS, prefersReducedMotion } from "./lib/retro";
 import Hero from "./components/Hero";
 import Nav from "./components/Nav";
 
@@ -40,26 +47,55 @@ function NotFound() {
 	);
 }
 
+/**
+ * Screen-change wipe. Each route steps in rather than fading smoothly, the way
+ * a menu swaps screens on a console. Scroll resets too, so a new page never
+ * opens halfway down.
+ */
+function RouteTransition({ children }) {
+	const scope = useRef(null);
+	const { pathname } = useLocation();
+
+	useLayoutEffect(() => {
+		window.scrollTo(0, 0);
+		if (!scope.current || prefersReducedMotion()) {
+			return undefined;
+		}
+		const ctx = gsap.context(() => {
+			gsap.fromTo(
+				scope.current,
+				{ opacity: 0, y: 8 },
+				{ opacity: 1, y: 0, duration: 0.3, ease: STEPS.quick, snap: { y: 1 } }
+			);
+		}, scope);
+		return () => ctx.revert();
+	}, [pathname]);
+
+	return <div ref={scope}>{children}</div>;
+}
+
 function App() {
 	return (
 		<div>
 			<Router>
 				<Nav />
-				<Suspense fallback={<PageFallback />}>
-					<Routes>
-						<Route path="/" element={<Hero />} />
-						<Route path="/resume" element={<Resume />} />
-						<Route path="/about" element={<About />} />
-						<Route path="/projects" element={<Project />} />
-						<Route path="/skills" element={<Skills />} />
-						<Route path="/contact" element={<Contact />} />
-						<Route path="/projects/aduitcode" element={<AduitCodeProject />} />
-						<Route path="/projects/medicare" element={<MedicareProject />} />
-						<Route path="/projects/quill" element={<QuillProject />} />
-						<Route path="/projects/travelblog" element={<TravelBlogProject />} />
-						<Route path="*" element={<NotFound />} />
-					</Routes>
-				</Suspense>
+				<RouteTransition>
+					<Suspense fallback={<PageFallback />}>
+						<Routes>
+							<Route path="/" element={<Hero />} />
+							<Route path="/resume" element={<Resume />} />
+							<Route path="/about" element={<About />} />
+							<Route path="/projects" element={<Project />} />
+							<Route path="/skills" element={<Skills />} />
+							<Route path="/contact" element={<Contact />} />
+							<Route path="/projects/aduitcode" element={<AduitCodeProject />} />
+							<Route path="/projects/medicare" element={<MedicareProject />} />
+							<Route path="/projects/quill" element={<QuillProject />} />
+							<Route path="/projects/travelblog" element={<TravelBlogProject />} />
+							<Route path="*" element={<NotFound />} />
+						</Routes>
+					</Suspense>
+				</RouteTransition>
 			</Router>
 		</div>
 	);

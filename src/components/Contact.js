@@ -4,6 +4,7 @@ import linkedinicon from "./assets/images/socialIcon/linkedin.png";
 import github from "./assets/images/socialIcon/github.png";
 import AdnaanResumePDF from "./assets/Resume/AdnaanResume.pdf";
 import PageShell from "./PageShell";
+import { useRetro, enterHeader, enterList } from "../lib/retro";
 
 const EMAIL = "muhammedadnaan233@gmail.com";
 
@@ -29,9 +30,15 @@ const LINKS = [
 ];
 
 export default function Contact() {
+	const scope = useRetro(() => {
+		enterHeader("[data-retro='header'] > *");
+		enterList("[data-retro='cta']", { stagger: 0.08, delay: 0.2 });
+		enterList("[data-retro='profile']", { stagger: 0.08, delay: 0.35 });
+	});
+
 	return (
-		<PageShell>
-			<div className="mb-12">
+		<PageShell ref={scope}>
+			<div className="mb-12" data-retro="header">
 				<h1 className="text-white text-4xl md:text-6xl mb-6 font-bold">
 					Get in touch
 				</h1>
@@ -44,6 +51,7 @@ export default function Contact() {
 			<div className="flex flex-wrap gap-4 mb-12">
 				<a
 					href={`mailto:${EMAIL}`}
+					data-retro="cta"
 					className="w-full sm:w-auto text-center break-all px-6 py-3 bg-yellow-400 text-[#00234b] rounded-lg font-bold text-lg hover:bg-yellow-300 transition-colors duration-300"
 				>
 					{EMAIL}
@@ -51,6 +59,7 @@ export default function Contact() {
 				<a
 					href={AdnaanResumePDF}
 					download="Muhammed-Adnaan-Resume.pdf"
+					data-retro="cta"
 					className="w-full sm:w-auto text-center px-6 py-3 border-2 border-yellow-400 text-yellow-400 rounded-lg font-bold text-lg hover:bg-yellow-400 hover:text-[#00234b] transition-colors duration-300"
 				>
 					Download Resume
@@ -61,6 +70,7 @@ export default function Contact() {
 				{LINKS.map((link) => (
 					<a
 						key={link.label}
+						data-retro="profile"
 						href={link.href}
 						target="_blank"
 						rel="noopener noreferrer"

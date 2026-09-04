@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import ArrowLeft from "./assets/images/arrow-right.png";
 import PageNav from "./PageNav";
 import PageShell from "./PageShell";
+import { useRetro, enterHeader } from "../lib/retro";
+import { revealOnScroll } from "../lib/retroScroll";
 
 const PROJECT_COUNT = 4;
 
@@ -75,7 +77,10 @@ export default function Skills() {
 	);
 
 	const SkillCategory = ({ title, skills, color }) => (
-		<div className="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition-colors duration-300">
+		<div
+			data-retro="category"
+			className="bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition-colors duration-300"
+		>
 			<h3 className={`text-2xl font-bold mb-6 ${color}`}>{title}</h3>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 				{skills.map((skill, index) => (
@@ -85,8 +90,14 @@ export default function Skills() {
 		</div>
 	);
 
+	const scope = useRetro(() => {
+		enterHeader("[data-retro='header'] > *");
+		revealOnScroll("[data-retro='category']", { stagger: 0.08 });
+		revealOnScroll("[data-retro='panel']", { stagger: 0.1 });
+	});
+
 	return (
-		<PageShell>
+		<PageShell ref={scope}>
 			{/* Header with back button */}
 			<div className="flex items-center gap-4 mb-12">
 				<Link
@@ -99,7 +110,7 @@ export default function Skills() {
 			</div>
 
 			{/* Page Title */}
-			<div className="mb-12">
+			<div className="mb-12" data-retro="header">
 				<h1 className="text-white text-4xl md:text-6xl mb-6 font-bold">
 					Skills & Expertise
 				</h1>
@@ -169,7 +180,10 @@ export default function Skills() {
 			</div>
 
 			{/* Additional Information */}
-			<div className="mt-16 bg-gray-900 rounded-lg p-8 border border-gray-700">
+			<div
+				data-retro="panel"
+				className="mt-16 bg-gray-900 rounded-lg p-8 border border-gray-700"
+			>
 				<h2 className="text-yellow-400 text-3xl font-bold mb-6">
 					Technical Proficiency Summary
 				</h2>
@@ -196,7 +210,10 @@ export default function Skills() {
 			</div>
 
 			{/* Languages */}
-			<div className="mt-8 bg-gray-900 rounded-lg p-8 border border-gray-700">
+			<div
+				data-retro="panel"
+				className="mt-8 bg-gray-900 rounded-lg p-8 border border-gray-700"
+			>
 				<h2 className="text-yellow-400 text-3xl font-bold mb-6">Languages</h2>
 				<div className="flex flex-wrap gap-4">
 					{["English", "Hindi", "Kannada", "Urdu"].map((language, index) => (

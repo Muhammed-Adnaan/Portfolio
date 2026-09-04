@@ -1,9 +1,16 @@
 import AdnaanResumePDF from "./assets/Resume/AdnaanResume.pdf";
 import homeBG from "./assets/images/homePage.png";
+import { useRetro, enterList } from "../lib/retro";
 
 export default function Resume() {
+	const scope = useRetro(() => {
+		enterList("[data-retro='resume-action']", { stagger: 0.08 });
+		enterList("[data-retro='resume-preview']", { y: 14, delay: 0.2 });
+	});
+
 	return (
 		<div
+			ref={scope}
 			className="pixelify-sans min-h-screen min-h-[100svh] w-full flex flex-col items-center pt-24 pb-12 px-4"
 			style={{
 				backgroundImage: `url(${homeBG})`,
@@ -18,6 +25,7 @@ export default function Resume() {
 				<a
 					href={AdnaanResumePDF}
 					download="Muhammed-Adnaan-Resume.pdf"
+					data-retro="resume-action"
 					className="px-6 py-3 bg-yellow-400 text-[#00234b] rounded-lg font-bold text-lg hover:bg-yellow-300 transition-colors duration-300"
 				>
 					Download Resume
@@ -26,13 +34,14 @@ export default function Resume() {
 					href={AdnaanResumePDF}
 					target="_blank"
 					rel="noopener noreferrer"
+					data-retro="resume-action"
 					className="px-6 py-3 border-2 border-yellow-400 text-yellow-400 rounded-lg font-bold text-lg hover:bg-yellow-400 hover:text-[#00234b] transition-colors duration-300"
 				>
 					Open in new tab
 				</a>
 			</div>
 
-			<div className="hidden md:block w-full max-w-5xl">
+			<div className="hidden md:block w-full max-w-5xl" data-retro="resume-preview">
 				<iframe
 					src={AdnaanResumePDF}
 					title="Resume"
