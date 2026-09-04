@@ -4,7 +4,7 @@ import homeBG from "./assets/images/homePage.png";
 export default function Resume() {
 	return (
 		<div
-			className="pixelify-sans min-h-screen w-full flex flex-col items-center pt-24 pb-12 px-4"
+			className="pixelify-sans min-h-screen min-h-[100svh] w-full flex flex-col items-center pt-24 pb-12 px-4"
 			style={{
 				backgroundImage: `url(${homeBG})`,
 				backgroundRepeat: "no-repeat",

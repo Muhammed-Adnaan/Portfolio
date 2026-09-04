@@ -11,7 +11,7 @@ export default function PageNav({ prev, next }) {
 			{prev ? (
 				<Link
 					to={prev.to}
-					className="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 transition-colors duration-300"
+					className="flex items-center gap-2 py-2 min-h-[44px] text-yellow-400 hover:text-yellow-300 transition-colors duration-300"
 				>
 					<img src={ArrowRight} alt="" className="w-6 h-6 rotate-180" />
 					<span className="text-lg md:text-xl">{prev.label}</span>
@@ -22,7 +22,7 @@ export default function PageNav({ prev, next }) {
 			{next ? (
 				<Link
 					to={next.to}
-					className="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 transition-colors duration-300"
+					className="flex items-center gap-2 py-2 min-h-[44px] text-yellow-400 hover:text-yellow-300 transition-colors duration-300"
 				>
 					<span className="text-lg md:text-xl">{next.label}</span>
 					<img src={ArrowRight} alt="" className="w-6 h-6" />

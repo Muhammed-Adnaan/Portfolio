@@ -31,21 +31,23 @@ export default function Nav() {
 			}`}
 		>
 			<div className="flex mx-6 md:mx-[50px] py-4 justify-between items-center text-white">
-				<div className="p-1 h-10 w-10 rounded-[50%] hover:bg-yellow-400 duration-200">
-					<Link to="/" aria-label="Home">
-						<img src={home} alt="" className="h-10 rounded-[50%]" />
-					</Link>
-				</div>
+				<Link
+					to="/"
+					aria-label="Home"
+					className="flex items-center justify-center h-11 w-11 rounded-full hover:bg-yellow-400 duration-200"
+				>
+					<img src={home} alt="" className="h-9 w-9 rounded-full" />
+				</Link>
 				<div className="flex items-center gap-5 md:gap-8">
 					<Link
 						to="/contact"
-						className="pixelify-sans text-2xl md:text-4xl text-yellow-500 hover:text-yellow-700 transition-colors duration-200"
+						className="pixelify-sans text-2xl md:text-4xl text-yellow-500 hover:text-yellow-700 transition-colors duration-200 py-2 px-1 flex items-center min-h-[44px]"
 					>
 						Contact
 					</Link>
 					<Link
 						to="/resume"
-						className="pixelify-sans text-2xl md:text-4xl text-yellow-500 hover:text-yellow-700 transition-colors duration-200"
+						className="pixelify-sans text-2xl md:text-4xl text-yellow-500 hover:text-yellow-700 transition-colors duration-200 py-2 px-1 flex items-center min-h-[44px]"
 					>
 						Resume
 					</Link>

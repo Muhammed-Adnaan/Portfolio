@@ -3,6 +3,7 @@ import instaicon from "./assets/images/socialIcon/instagram.png";
 import linkedinicon from "./assets/images/socialIcon/linkedin.png";
 import github from "./assets/images/socialIcon/github.png";
 import AdnaanResumePDF from "./assets/Resume/AdnaanResume.pdf";
+import PageShell from "./PageShell";
 
 const EMAIL = "muhammedadnaan233@gmail.com";
 
@@ -29,7 +30,7 @@ const LINKS = [
 
 export default function Contact() {
 	return (
-		<div className="pixelify-sans bg-[#00234b] min-h-screen w-full p-8 md:p-[100px] font-inter">
+		<PageShell>
 			<div className="mb-12">
 				<h1 className="text-white text-4xl md:text-6xl mb-6 font-bold">
 					Get in touch
@@ -43,14 +44,14 @@ export default function Contact() {
 			<div className="flex flex-wrap gap-4 mb-12">
 				<a
 					href={`mailto:${EMAIL}`}
-					className="px-6 py-3 bg-yellow-400 text-[#00234b] rounded-lg font-bold text-lg hover:bg-yellow-300 transition-colors duration-300"
+					className="w-full sm:w-auto text-center break-all px-6 py-3 bg-yellow-400 text-[#00234b] rounded-lg font-bold text-lg hover:bg-yellow-300 transition-colors duration-300"
 				>
 					{EMAIL}
 				</a>
 				<a
 					href={AdnaanResumePDF}
 					download="Muhammed-Adnaan-Resume.pdf"
-					className="px-6 py-3 border-2 border-yellow-400 text-yellow-400 rounded-lg font-bold text-lg hover:bg-yellow-400 hover:text-[#00234b] transition-colors duration-300"
+					className="w-full sm:w-auto text-center px-6 py-3 border-2 border-yellow-400 text-yellow-400 rounded-lg font-bold text-lg hover:bg-yellow-400 hover:text-[#00234b] transition-colors duration-300"
 				>
 					Download Resume
 				</a>
@@ -81,11 +82,11 @@ export default function Contact() {
 			<div className="mt-16">
 				<Link
 					to="/"
-					className="text-yellow-400 hover:text-yellow-300 transition-colors duration-300 text-lg"
+					className="inline-flex items-center py-2 min-h-[44px] text-yellow-400 hover:text-yellow-300 transition-colors duration-300 text-lg"
 				>
 					← Back to Home
 				</Link>
 			</div>
-		</div>
+		</PageShell>
 	);
 }

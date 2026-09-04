@@ -4,6 +4,7 @@ import aduitcode from "./assets/images/project-pics/aduitcode/aduitProfile.webp"
 import Quill from "./assets/images/project-pics/chatApp/quillProfile.webp";
 import medicare from "./assets/images/project-pics/medihub/Medicare-profile.webp";
 import travel from "./assets/images/project-pics/travelBlog/TravelProfile.webp";
+import PageShell from "./PageShell";
 
 export default function Proj() {
 	// Define project data as an array of objects
@@ -39,7 +40,7 @@ export default function Proj() {
 	];
 
 	return (
-		<div className="pixelify-sans bg-[#00234b] min-h-screen w-full flex flex-col justify-start items-center p-8 md:p-[100px] font-inter">
+		<PageShell className="flex flex-col justify-start items-center">
 			{/* Page Title */}
 			<div className="text-white text-4xl md:text-6xl mb-12 self-start">
 				Projects
@@ -99,6 +100,6 @@ export default function Proj() {
 				prev={{ to: "/about", label: "About" }}
 				next={{ to: "/skills", label: "Skills" }}
 			/>
-		</div>
+		</PageShell>
 	);
 }

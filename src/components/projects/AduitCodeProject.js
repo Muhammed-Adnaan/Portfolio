@@ -11,6 +11,7 @@ import screenshot3 from "../assets/images/project-pics/aduitcode/Screenshot 2024
 import screenshot4 from "../assets/images/project-pics/aduitcode/Screenshot 2024-07-29 161850.webp";
 import screenshot5 from "../assets/images/project-pics/aduitcode/Screenshot 2024-07-29 161938.webp";
 import screenshot6 from "../assets/images/project-pics/aduitcode/Screenshot 2025-08-06 124040.webp";
+import PageShell from "../PageShell";
 
 export default function AduitCodeProject() {
 	const projectInfo = {
@@ -39,12 +40,12 @@ export default function AduitCodeProject() {
 	};
 
 	return (
-		<div className="pixelify-sans bg-[#00234b] min-h-screen w-full p-8 md:p-[100px] font-inter">
+		<PageShell>
 			{/* Header with back button */}
 			<div className="flex items-center gap-4 mb-12">
 				<Link
 					to="/projects"
-					className="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 transition-colors duration-300"
+					className="flex items-center gap-2 py-2 min-h-[44px] text-yellow-400 hover:text-yellow-300 transition-colors duration-300"
 				>
 					<img src={ArrowLeft} alt="Back" className="w-6 h-6 rotate-180" />
 					<span className="text-xl">Back to Projects</span>
@@ -101,18 +102,18 @@ export default function AduitCodeProject() {
 				<h2 className="text-yellow-400 text-2xl md:text-3xl mb-6 font-bold">
 					Project Gallery
 				</h2>
-				<div className="grid grid-cols-10 gap-4 auto-rows-[200px]">
+				<div className="grid grid-cols-1 gap-4 md:grid-cols-10 md:auto-rows-[200px]">
 					{projectInfo.images.map((image, index) => (
 						<div
 							key={index}
-							className={`relative group overflow-hidden rounded-lg border-2 border-gray-700 hover:border-yellow-500 transition-all duration-300 cursor-pointer ${
+							className={`relative group overflow-hidden rounded-lg border-2 border-gray-700 hover:border-yellow-500 transition-all duration-300 aspect-video md:aspect-auto ${
 								image.size === "large"
-									? "col-span-10 row-span-2"
+									? "md:col-span-10 md:row-span-2"
 									: image.size === "medium"
-									? "col-span-6 row-span-1"
+									? "md:col-span-6 md:row-span-1"
 									: image.size === "Lmedium"
-									? "col-span-6 row-span-2"
-									: "col-span-4 row-span-1"
+									? "md:col-span-6 md:row-span-2"
+									: "md:col-span-4 md:row-span-1"
 							}`}
 						>
 							<img
@@ -122,8 +123,8 @@ export default function AduitCodeProject() {
 								decoding="async"
 								className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
 							/>
-							<div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-end">
-								<div className="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+							<div className="absolute inset-0 bg-black bg-opacity-40 md:bg-opacity-0 md:group-hover:bg-opacity-50 transition-all duration-300 flex items-end">
+								<div className="p-4 text-white opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
 									<p className="text-sm font-medium">{image.alt}</p>
 								</div>
 							</div>
@@ -143,6 +144,6 @@ export default function AduitCodeProject() {
 					View Source Code
 				</a>
 			</div>
-		</div>
+		</PageShell>
 	);
 }

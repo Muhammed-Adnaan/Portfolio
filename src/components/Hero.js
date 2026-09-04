@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 export default function Hero() {
 	return (
 		<div
-			className="flex justify-center items-center min-h-screen w-full px-4"
+			className="flex justify-center items-center min-h-screen min-h-[100svh] w-full px-4"
 			style={{
 				backgroundImage: `url(${homeBG})`,
 				backgroundRepeat: `no-repeat`,

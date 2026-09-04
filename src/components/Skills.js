@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ArrowLeft from "./assets/images/arrow-right.png";
 import PageNav from "./PageNav";
+import PageShell from "./PageShell";
 
 const PROJECT_COUNT = 4;
 
@@ -85,12 +86,12 @@ export default function Skills() {
 	);
 
 	return (
-		<div className="pixelify-sans bg-[#00234b] min-h-screen w-full p-8 md:p-[100px] font-inter">
+		<PageShell>
 			{/* Header with back button */}
 			<div className="flex items-center gap-4 mb-12">
 				<Link
 					to="/"
-					className="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 transition-colors duration-300"
+					className="flex items-center gap-2 py-2 min-h-[44px] text-yellow-400 hover:text-yellow-300 transition-colors duration-300"
 				>
 					<img src={ArrowLeft} alt="Back" className="w-6 h-6 rotate-180" />
 					<span className="text-xl">Back to Home</span>
@@ -212,6 +213,6 @@ export default function Skills() {
 				prev={{ to: "/projects", label: "Projects" }}
 				next={{ to: "/resume", label: "Resume" }}
 			/>
-		</div>
+		</PageShell>
 	);
 }

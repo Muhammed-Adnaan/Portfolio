@@ -4,6 +4,7 @@ import instaicon from "./assets/images/socialIcon/instagram.png";
 import linkedinicon from "./assets/images/socialIcon/linkedin.png";
 import github from "./assets/images/socialIcon/github.png";
 import PageNav from "./PageNav";
+import PageShell from "./PageShell";
 
 const SOCIALS = [
 	{
@@ -69,7 +70,7 @@ export default function About() {
 	}, [charIndex, isTyping, phraseIndex, phrases]);
 
 	return (
-		<div className="pixelify-sans bg-[#00234b] min-h-screen w-full flex flex-col justify-center items-start p-8 md:p-[100px] font-inter">
+		<PageShell className="flex flex-col justify-center items-start">
 			<div className="flex flex-col gap-4">
 				<h1 className="pixelify-sans text-white text-4xl md:text-6xl leading-tight">
 					<span className="text-yellow-400">Hey,</span> I am Muhammed Adnaan Ur
@@ -94,7 +95,7 @@ export default function About() {
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label={social.label}
-						className="hover:opacity-75 transition-opacity duration-300"
+						className="flex items-center justify-center h-11 w-11 hover:opacity-75 transition-opacity duration-300"
 					>
 						<img src={social.icon} alt="" />
 					</a>
@@ -110,6 +111,6 @@ export default function About() {
 				prev={{ to: "/", label: "Home" }}
 				next={{ to: "/projects", label: "Projects" }}
 			/>
-		</div>
+		</PageShell>
 	);
 }
