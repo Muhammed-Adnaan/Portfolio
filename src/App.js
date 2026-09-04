@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import { gsap, STEPS, prefersReducedMotion } from "./lib/retro";
 import Hero from "./components/Hero";
+import SecretHub from "./components/SecretHub";
 import Nav from "./components/Nav";
 
 // Hero and Nav ship in the initial bundle; everything else is fetched on demand
@@ -108,6 +109,7 @@ function App() {
 						</Routes>
 					</Suspense>
 				</RouteTransition>
+				<SecretHub />
 			</Router>
 		</div>
 	);
