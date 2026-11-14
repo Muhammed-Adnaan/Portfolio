@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ArrowLeft from "./assets/images/arrow-right.png";
 import PageNav from "./PageNav";
 import PageShell from "./PageShell";
+import BlastableText from "./BlastableText";
 import { useRetro, enterHeader } from "../lib/retro";
 import { revealOnScroll } from "../lib/retroScroll";
 
@@ -112,11 +113,10 @@ export default function Skills() {
 			{/* Page Title */}
 			<div className="mb-12" data-retro="header">
 				<h1 className="text-white text-4xl md:text-6xl mb-6 font-bold">
-					Skills & Expertise
+					<BlastableText text="Skills & Expertise" />
 				</h1>
 				<p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-4xl">
-					A comprehensive overview of my technical skills and competencies,
-					developed through various projects and continuous learning.
+					<BlastableText text="A comprehensive overview of my technical skills and competencies, developed through various projects and continuous learning." />
 				</p>
 			</div>
 

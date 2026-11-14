@@ -5,6 +5,7 @@ import linkedinicon from "./assets/images/socialIcon/linkedin.png";
 import github from "./assets/images/socialIcon/github.png";
 import PageNav from "./PageNav";
 import PageShell from "./PageShell";
+import BlastableText from "./BlastableText";
 import { useRetro, enterList, STEPS, PIXEL, gsap } from "../lib/retro";
 
 const SOCIALS = [
@@ -91,8 +92,7 @@ export default function About() {
 		<PageShell className="flex flex-col justify-center items-start" ref={scope}>
 			<div className="flex flex-col gap-4" data-retro="name">
 				<h1 className="pixelify-sans text-white text-4xl md:text-6xl leading-tight">
-					<span className="text-yellow-400">Hey,</span> I am Muhammed Adnaan Ur
-					Rahmaan
+					<BlastableText text="Hey, I am Muhammed Adnaan Ur Rahmaan" />
 				</h1>
 				<div className="pixelify-sans text-white text-2xl md:text-4xl h-10 md:h-12 flex items-center">
 					<span aria-live="polite">{displayedText}</span>
@@ -102,8 +102,8 @@ export default function About() {
 				</div>
 			</div>
 			<div className="mt-[50px] text-2xl text-white" data-retro="meta">
-				<span className="text-yellow-400">From :</span>
-				📍Bengaluru, India
+				<span className="text-yellow-400">From : </span>
+				<BlastableText text="📍Bengaluru, India" />
 			</div>
 			<div className="flex gap-4 mt-5">
 				{SOCIALS.map((social) => (
@@ -124,7 +124,7 @@ export default function About() {
 				to="/contact"
 				className="mt-8 px-6 py-3 bg-yellow-400 text-[#00234b] rounded-lg font-bold text-xl hover:bg-yellow-300 transition-colors duration-300"
 			>
-				Get in touch
+				<BlastableText text="Get in touch" />
 			</Link>
 			<PageNav
 				prev={{ to: "/", label: "Home" }}

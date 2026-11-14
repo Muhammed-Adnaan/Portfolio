@@ -5,6 +5,7 @@ import Quill from "./assets/images/project-pics/chatApp/quillProfile.webp";
 import medicare from "./assets/images/project-pics/medihub/Medicare-profile.webp";
 import travel from "./assets/images/project-pics/travelBlog/TravelProfile.webp";
 import PageShell from "./PageShell";
+import BlastableText from "./BlastableText";
 import { useRetro, enterList } from "../lib/retro";
 import { revealOnScroll } from "../lib/retroScroll";
 
@@ -53,7 +54,7 @@ export default function Proj() {
 				className="text-white text-4xl md:text-6xl mb-12 self-start"
 				data-retro="page-title"
 			>
-				Projects
+				<BlastableText text="Projects" />
 			</div>
 
 			{/* Projects Grid */}
@@ -94,12 +95,10 @@ export default function Proj() {
 							<Link to={project.to}>
 								<div className="p-6 flex-grow flex flex-col">
 									<h3 className="text-[#7CFC7C] text-2xl font-bold mb-3 group-hover:text-yellow-400 duration-300">
-										{" "}
-										{/* Green text for title */}
-										{project.title}
+										<BlastableText text={project.title} />
 									</h3>
 									<p className="text-gray-300 text-lg leading-relaxed mb-4 flex-grow">
-										{project.description}
+										<BlastableText text={project.description} />
 									</p>
 								</div>
 							</Link>

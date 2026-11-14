@@ -5,6 +5,7 @@ import homeBG from "./assets/images/homePage.png";
 import projects from "./assets/images/resized-projects300.png";
 
 import { Link } from "react-router-dom";
+import BlastableText from "./BlastableText";
 import { gsap, useRetro, STEPS, PIXEL, spriteBob } from "../lib/retro";
 
 export default function Hero() {
@@ -54,6 +55,9 @@ export default function Hero() {
 			<div className="flex flex-col items-center">
 				<div className="m-10 md:m-20 p-5" data-retro="logo">
 					<img src={protfolio} alt="Portfolio" className="max-w-full" />
+					<div className="text-yellow-400 font-mono text-center mt-3 tracking-widest text-xs md:text-sm">
+						<BlastableText text="MUHAMMED ADNAAN • FULL STACK DEVELOPER" />
+					</div>
 				</div>
 				<div className="flex justify-center">
 					<div className="hover:bg-yellow-400" data-retro="menu-item">

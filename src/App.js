@@ -10,6 +10,7 @@ import { gsap, STEPS, prefersReducedMotion } from "./lib/retro";
 import Hero from "./components/Hero";
 import SecretHub from "./components/SecretHub";
 import Nav from "./components/Nav";
+import SiteCompanion from "./components/SiteCompanion";
 
 // Hero and Nav ship in the initial bundle; everything else is fetched on demand
 // so the landing page doesn't pay for the project galleries.
@@ -114,6 +115,7 @@ function App() {
 					</Suspense>
 				</RouteTransition>
 				<SecretHub />
+				<SiteCompanion />
 			</Router>
 		</div>
 	);
