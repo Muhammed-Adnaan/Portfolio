@@ -1,5 +1,6 @@
 import AdnaanResumePDF from "./assets/Resume/AdnaanResume.pdf";
 import homeBG from "./assets/images/homePage.png";
+import BlastableText from "./BlastableText";
 import { useRetro, enterList } from "../lib/retro";
 
 export default function Resume() {
@@ -29,7 +30,7 @@ export default function Resume() {
 					data-retro="resume-action"
 					className="px-6 py-3 bg-yellow-400 text-[#00234b] rounded-lg font-bold text-lg hover:bg-yellow-300 transition-colors duration-300"
 				>
-					Download Resume
+					<BlastableText text="Download Resume" />
 				</a>
 				<a
 					href={AdnaanResumePDF}
@@ -38,7 +39,7 @@ export default function Resume() {
 					data-retro="resume-action"
 					className="px-6 py-3 border-2 border-yellow-400 text-yellow-400 rounded-lg font-bold text-lg hover:bg-yellow-400 hover:text-[#00234b] transition-colors duration-300"
 				>
-					Open in new tab
+					<BlastableText text="Open in new tab" />
 				</a>
 			</div>
 

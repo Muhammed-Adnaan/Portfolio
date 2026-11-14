@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import HubWorld from "./HubWorld";
+import { audioEngine } from "../lib/audioEngine";
 
 /**
  * Hidden entrance to the walkable hub.
@@ -34,6 +35,7 @@ export default function SecretHub() {
 	useEffect(() => {
 		const onKeyDown = (event) => {
 			if (event.key === "Escape" && open) {
+				if (event.defaultPrevented) return;
 				setOpen(false);
 				return;
 			}
@@ -48,6 +50,7 @@ export default function SecretHub() {
 			if (shiftTaps.current >= SHIFT_TAPS) {
 				shiftTaps.current = 0;
 				openerFocus.current = document.activeElement;
+				audioEngine.playDoor();
 				setOpen(true);
 			}
 		};
@@ -68,6 +71,7 @@ export default function SecretHub() {
 			) {
 				lastTap.current = null;
 				openerFocus.current = document.activeElement;
+				audioEngine.playDoor();
 				setOpen(true);
 			}
 		};

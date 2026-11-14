@@ -4,6 +4,7 @@ import linkedinicon from "./assets/images/socialIcon/linkedin.png";
 import github from "./assets/images/socialIcon/github.png";
 import AdnaanResumePDF from "./assets/Resume/AdnaanResume.pdf";
 import PageShell from "./PageShell";
+import BlastableText from "./BlastableText";
 import { useRetro, enterHeader, enterList } from "../lib/retro";
 
 const EMAIL = "muhammedadnaan233@gmail.com";
@@ -40,11 +41,10 @@ export default function Contact() {
 		<PageShell ref={scope}>
 			<div className="mb-12" data-retro="header">
 				<h1 className="text-white text-4xl md:text-6xl mb-6 font-bold">
-					Get in touch
+					<BlastableText text="Get in touch" />
 				</h1>
 				<p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl">
-					I'm open to internships, full-time roles and freelance work. The
-					fastest way to reach me is email — I usually reply within a day.
+					<BlastableText text="I'm open to internships, full-time roles and freelance work. The fastest way to reach me is email — I usually reply within a day." />
 				</p>
 			</div>
 
@@ -54,7 +54,7 @@ export default function Contact() {
 					data-retro="cta"
 					className="w-full sm:w-auto text-center break-all px-6 py-3 bg-yellow-400 text-[#00234b] rounded-lg font-bold text-lg hover:bg-yellow-300 transition-colors duration-300"
 				>
-					{EMAIL}
+					<BlastableText text={EMAIL} />
 				</a>
 				<a
 					href={AdnaanResumePDF}
@@ -62,7 +62,7 @@ export default function Contact() {
 					data-retro="cta"
 					className="w-full sm:w-auto text-center px-6 py-3 border-2 border-yellow-400 text-yellow-400 rounded-lg font-bold text-lg hover:bg-yellow-400 hover:text-[#00234b] transition-colors duration-300"
 				>
-					Download Resume
+					<BlastableText text="Download Resume" />
 				</a>
 			</div>
 
@@ -79,10 +79,10 @@ export default function Contact() {
 						<img src={link.icon} alt="" className="w-10 h-10 object-contain" />
 						<div>
 							<div className="text-white text-lg font-semibold">
-								{link.label}
+								<BlastableText text={link.label} />
 							</div>
 							<div className="text-gray-400 text-sm break-all">
-								{link.handle}
+								<BlastableText text={link.handle} />
 							</div>
 						</div>
 					</a>
@@ -94,7 +94,7 @@ export default function Contact() {
 					to="/"
 					className="inline-flex items-center py-2 min-h-[44px] text-yellow-400 hover:text-yellow-300 transition-colors duration-300 text-lg"
 				>
-					← Back to Home
+					<BlastableText text="← Back to Home" />
 				</Link>
 			</div>
 		</PageShell>
