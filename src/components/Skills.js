@@ -228,7 +228,7 @@ export default function Skills() {
 			</div>
 			<PageNav
 				prev={{ to: "/projects", label: "Projects" }}
-				next={{ to: "/resume", label: "Resume" }}
+				next={{ to: "/blog", label: "Dev Blogs" }}
 			/>
 		</PageShell>
 	);

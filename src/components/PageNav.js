@@ -3,10 +3,14 @@ import ArrowRight from "./assets/images/arrow-right.png";
 import { gsap, STEPS, prefersReducedMotion } from "../lib/retro";
 
 /**
- * Previous / next links shared by the About, Projects and Skills pages.
- * Both sides are optional so the ends of the tour can omit one.
+ * Previous / next links shared across pages, with integrated Blog navigation.
+ * All sides are customizable or optional.
  */
-export default function PageNav({ prev, next }) {
+export default function PageNav({
+	prev,
+	next,
+	blog = { to: "/blog", label: "Blog" },
+}) {
 	// The arrow steps toward the direction of travel, like a menu cursor.
 	const nudge = (direction) => (event) => {
 		if (prefersReducedMotion()) return;
@@ -39,6 +43,18 @@ export default function PageNav({ prev, next }) {
 			) : (
 				<span />
 			)}
+
+			{blog ? (
+				<Link
+					to={blog.to}
+					className="flex items-center gap-1.5 px-3 py-1.5 border border-yellow-400/50 rounded bg-yellow-400/10 text-yellow-400 hover:bg-yellow-400/20 hover:border-yellow-400 transition-colors duration-200 text-sm md:text-base font-mono font-semibold"
+				>
+					<span>[ {blog.label.toUpperCase()} ]</span>
+				</Link>
+			) : (
+				<span />
+			)}
+
 			{next ? (
 				<Link
 					to={next.to}

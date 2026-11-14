@@ -65,6 +65,14 @@ export default function Nav() {
 				</Link>
 				<div className="flex items-center gap-5 md:gap-8">
 					<Link
+						to="/blog"
+						data-retro="nav-item"
+						onPointerDown={kick}
+						className="pixelify-sans text-2xl md:text-4xl text-yellow-500 hover:text-yellow-700 transition-colors duration-200 py-2 px-1 flex items-center min-h-[44px]"
+					>
+						Blog
+					</Link>
+					<Link
 						to="/contact"
 						data-retro="nav-item"
 						onPointerDown={kick}

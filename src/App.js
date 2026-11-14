@@ -18,6 +18,8 @@ const About = lazy(() => import("./components/About"));
 const Project = lazy(() => import("./components/Proj"));
 const Skills = lazy(() => import("./components/Skills"));
 const Contact = lazy(() => import("./components/Contact"));
+const Blog = lazy(() => import("./components/Blog"));
+const BlogPost = lazy(() => import("./components/BlogPost"));
 const AduitCodeProject = lazy(() => import("./components/projects/AduitCodeProject"));
 const MedicareProject = lazy(() => import("./components/projects/MedicareProject"));
 const QuillProject = lazy(() => import("./components/projects/QuillProject"));
@@ -100,6 +102,8 @@ function App() {
 							<Route path="/about" element={<About />} />
 							<Route path="/projects" element={<Project />} />
 							<Route path="/skills" element={<Skills />} />
+							<Route path="/blog" element={<Blog />} />
+							<Route path="/blog/:slug" element={<BlogPost />} />
 							<Route path="/contact" element={<Contact />} />
 							<Route path="/projects/aduitcode" element={<AduitCodeProject />} />
 							<Route path="/projects/medicare" element={<MedicareProject />} />
